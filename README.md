@@ -5,5 +5,5 @@ Some scripts to help with managing TeX projects
 Python 3.5 or higher with numpy
 
 # Disclaimer
-The scripts in this repository make asusmptions about the way .tex files are formatted.
+The scripts in this repository make assumptions about the way .tex files are formatted.
 There is no garauntee that these scripts will be useful for a given project
