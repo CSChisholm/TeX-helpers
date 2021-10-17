@@ -26,6 +26,10 @@ def ExtractLabelInfo(lineNum):
 
 #Specify directory of project
 directory = ''
+if (len(directory)==0):
+    directory = './'
+if not(directory[-1]=='/'):
+    directory+='/'
 #Search for all .tex files in main directory and subdirectories
 texFiles = glob.glob(directory+'**/*.tex',recursive=True)
 #Get every line of text into one list with a dictionary marking
