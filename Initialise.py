@@ -35,7 +35,6 @@ if not(os.path.exists('.git')):
     with open('.gitignore','w') as f:
         f.write(gitignore)
         f.flush()
-    #subprocess.run(['mv',directory+'gitignore.txt','.gitignore'])
     subprocess.run(['git','add','.gitignore','ReadMe.md'])
     subprocess.run(['git','commit','-m','Initial commit'])
     #Check if there are already .tex or .bib files here
