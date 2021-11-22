@@ -3,8 +3,12 @@
 import subprocess
 import os as os
 import glob as glob
+import sys
 
-directory = 'Test'
+try:
+    directory = sys.argv[1] #The target directory can be parsed from the command line
+except IndexError:
+    directory = '' #A default directory can be specified here
 if (len(directory)==0):
     directory = './' #Allow working in directory where this script is saved
 if not(directory[-1]=='/'):
