@@ -24,18 +24,18 @@ if not(os.path.exists('.git')):
         f.flush()
     #Write .gitignore
     gitignore = """
-    *.aux
-    *.out
-    *.log
-    *.synctex.gz
-    *.bbl
-    *.toc
-    *.blg
-    *.bib.bak
-    *.bib.sav
-    .~lock*
-    *.db
-    """
+*.aux
+*.out
+*.log
+*.synctex.gz
+*.bbl
+*.toc
+*.blg
+*.bib.bak
+*.bib.sav
+.~lock*
+*.db
+"""
     with open('.gitignore','w') as f:
         f.write(gitignore)
         f.flush()
