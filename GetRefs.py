@@ -1,6 +1,7 @@
 #Script to get all labels in TeX project
 
 import glob as glob
+import sys
 
 def ExtractLabelInfo(lineNum):
     info = {}
@@ -24,9 +25,12 @@ def ExtractLabelInfo(lineNum):
     return info
 
 #Specify directory of project
-directory = ''
+try:
+    directory = sys.argv[1] #The target directory can be parsed from the command line
+except IndexError:
+    directory = '' #A default directory can be specified here
 if (len(directory)==0):
-    directory = './'
+    directory = './' #Allow working in directory where this script is saved
 if not(directory[-1]=='/'):
     directory+='/'
 #Search for all .tex files in main directory and subdirectories
