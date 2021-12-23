@@ -1,7 +1,6 @@
 #Script to get all labels in TeX project
 
 import glob as glob
-import numpy as np
 
 def ExtractLabelInfo(lineNum):
     info = {}
@@ -21,7 +20,7 @@ def ExtractLabelInfo(lineNum):
     except IndexError:
         info = {}
         info['Label'] = line.split('\label{')[1].split('}')[0]
-    info['File'] = fileMarkers[keysList[np.where(np.array(keysList)<lineNum)[0][-1]]]
+    info['File'] = fileMarkers[keysList[[II for II, key in enumerate(keysList) if key<lineNum][-1]]]
     return info
 
 #Specify directory of project
