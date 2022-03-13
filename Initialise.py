@@ -53,6 +53,8 @@ if not(os.path.exists('.git')):
     with open('.gitignore','a') as f:
         f.writelines(addToGitignore)
         f.flush()
+    subprocess.run(['git','add','.gitignore'])
+    subprocess.run(['git','commit','-m','Update .gitignore'])
 else:
     #Don't do anything because there is already a git repository here
     print('Git repository already exists')
